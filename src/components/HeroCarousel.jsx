@@ -43,7 +43,7 @@ const slides = [
   },
 ];
 
-const INTERVAL = 5000;
+const INTERVAL = 10000;
 
 const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
@@ -77,7 +77,7 @@ const HeroCarousel = () => {
 
   const handlePrev = () => { resetTimer(); prev(); };
   const handleNext = () => { resetTimer(); next(); };
-  const handleDot  = (i) => { if (i !== current) { resetTimer(); setCurrent(i); } };
+  const handleDot = (i) => { if (i !== current) { resetTimer(); setCurrent(i); } };
 
   return (
     <section className="hero-carousel-wrap">
@@ -87,7 +87,7 @@ const HeroCarousel = () => {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide, i) => (
-          <div key={i} className="hero-slide-item">
+          <div key={i} className={`hero-slide-item ${slide.type === 'brand' ? 'brand-item' : 'news-item'}`}>
             {/* BG */}
             <div
               className={`hero-slide-bg ${slide.type === 'brand' ? 'brand-bg' : 'news-bg'}`}
@@ -95,7 +95,7 @@ const HeroCarousel = () => {
             />
 
             {/* Content */}
-            <div className="container hero-slide-content">
+            <div className={`hero-slide-content ${slide.type === 'brand' ? 'container' : 'news-container'}`}>
               {slide.type === 'brand' ? (
                 <div className="hero-brand-content">
                   <h1 className="hero-main-title">{slide.title}</h1>
