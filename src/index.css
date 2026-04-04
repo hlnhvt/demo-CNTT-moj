@@ -1,0 +1,90 @@
+:root {
+  --primary-blue: #004a95;
+  --primary-gradient: linear-gradient(135deg, #004a95 0%, #0072bc 100%);
+  --secondary-blue: #0072bc;
+  --dark-blue: #003366;
+  --light-blue: #f0f7ff;
+  --accent-gold: #f9a825;
+  --text-main: #1a1a2e;
+  --text-muted: #535c68;
+  --white: #ffffff;
+  --bg-gray: #f4f7f6;
+  --border-color: #e0e0e0;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --header-height: 120px;
+  --nav-height: 60px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --container-width: 1296px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal-anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-gray);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+

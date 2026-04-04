@@ -1,0 +1,186 @@
+.featured-news-block {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 0 20px; /* Aligns with .container padding */
+}
+
+/* Header style from screenshot 2 */
+.featured-news-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.featured-news-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Red underline detail on the title like screenshot */
+.featured-news-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #c62828; 
+}
+
+.featured-news-line {
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+/* 3-Column Grid Layout */
+.featured-news-grid {
+  display: grid;
+  grid-template-columns: 2fr 4.5fr 2fr;
+  gap: 30px;
+}
+
+/* Common Image Hover */
+.fn-small-img, .fn-massive-img, .fn-medium-img {
+  overflow: hidden;
+  border-radius: 6px;
+}
+.fn-small-img img, .fn-massive-img img, .fn-medium-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.fn-small-card:hover img, .fn-massive-card:hover img, .fn-medium-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Typography elements */
+.fn-date {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 8px;
+}
+
+/* Column 1: Small Items */
+.fn-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fn-small-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  cursor: pointer;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.fn-small-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fn-small-img {
+  width: 110px;
+  flex-shrink: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.fn-small-text h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fn-small-card:hover h4 {
+  color: var(--primary-blue);
+}
+
+/* Column 2: Massive Featured */
+.fn-col-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.fn-massive-card {
+  cursor: pointer;
+}
+
+.fn-massive-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 20px;
+}
+
+.fn-massive-content h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #004a95; /* Intense Blue from screenshot */
+  line-height: 1.35;
+  margin: 0 0 15px 0;
+  transition: color 0.3s ease;
+}
+
+.fn-massive-card:hover h3 {
+  color: #c62828;
+}
+
+.fn-massive-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+/* Column 3: Medium Stacked */
+.fn-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fn-medium-card {
+  cursor: pointer;
+}
+
+.fn-medium-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 12px;
+}
+
+.fn-medium-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.fn-medium-card:hover h4 {
+  color: var(--primary-blue);
+}

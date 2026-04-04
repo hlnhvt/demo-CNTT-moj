@@ -1,0 +1,31 @@
+.main-header {
+  height: 140px;
+  background-image: url('/banner-header-op1-0199f18f3c9e70d695b6c4b5ac835259.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo-title {
+  max-height: 80%; /* Smaller than previous 100% to create balance */
+  max-width: 90%;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.header-logo-title:hover {
+  transform: scale(1.02);
+}
