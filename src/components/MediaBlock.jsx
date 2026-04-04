@@ -34,10 +34,12 @@ const MediaBlock = () => {
         </div>
         <div className="media-tabs">
           <button className={`media-tab ${activeTab === 'photo' ? 'active' : ''}`} onClick={() => setActiveTab('photo')}>
-            📷 Ảnh
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Ảnh
           </button>
           <button className={`media-tab ${activeTab === 'video' ? 'active' : ''}`} onClick={() => setActiveTab('video')}>
-            🎬 Video
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Video
           </button>
         </div>
       </div>

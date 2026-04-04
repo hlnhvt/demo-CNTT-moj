@@ -1,5 +1,5 @@
 .media-block {
-  padding: 40px 0 60px;
+  padding: 0 20px 40px;
 }
 
 .media-block-header {
@@ -63,6 +63,9 @@
   color: var(--primary-blue);
   cursor: pointer;
   transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
 .media-tab.active {
