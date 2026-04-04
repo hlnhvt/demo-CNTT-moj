@@ -16,9 +16,9 @@ const MainGrid = () => {
   const newsCategories = [
     {
       title: "HOẠT ĐỘNG CHUYỂN ĐỔI SỐ",
-      featured: { 
-        title: "Giao ban Ban Chỉ đạo 57 của Bộ Tư pháp", 
-        date: "20/03/2026", 
+      featured: {
+        title: "Giao ban Ban Chỉ đạo 57 của Bộ Tư pháp",
+        date: "20/03/2026",
         summary: "Thứ trưởng Bộ Tư pháp Nguyễn Thanh Tịnh chủ trì cuộc họp về công tác phát triển khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số. Hội nghị tập trung tháo gỡ điểm nghẽn về hạ tầng số và tạo đột phá trong lĩnh vực CNTT năm 2026.",
         img: "/news_digital_meeting.png"
       },
@@ -30,9 +30,9 @@ const MainGrid = () => {
     },
     {
       title: "AN NINH THÔNG TIN MẠNG",
-      featured: { 
-        title: "Bảo vệ không gian mạng như chủ quyền quốc gia", 
-        date: "28/03/2026", 
+      featured: {
+        title: "Bảo vệ không gian mạng như chủ quyền quốc gia",
+        date: "28/03/2026",
         summary: "Thủ tướng Phạm Minh Chính nhấn mạnh tầm quan trọng của an ninh mạng. Không gian mạng cần được bảo vệ vững chắc để đảm bảo an toàn cho chính phủ số, kinh tế số và xã hội số trong kỷ nguyên mới.",
         img: "/news_cybersecurity.png"
       },
@@ -53,7 +53,7 @@ const MainGrid = () => {
               <h2 className="section-title-editorial">{cat.title}</h2>
               <div className="line-accent"></div>
             </div>
-            
+
             <div className="editorial-layout">
               {/* Featured Left */}
               <div className="editorial-featured">
@@ -85,7 +85,6 @@ const MainGrid = () => {
       <aside className="sidebar-col">
         <div className="sidebar-widget announcements reveal-anim">
           <div className="widget-header">
-            <span className="icon">🔔</span>
             <h3 className="widget-title">THÔNG BÁO</h3>
           </div>
           <ul className="announcement-list">
@@ -96,10 +95,10 @@ const MainGrid = () => {
             ))}
           </ul>
         </div>
-        
 
 
-        <div className="sidebar-actions reveal-anim" style={{ marginTop: '30px' }}>
+
+        <div className="sidebar-actions reveal-anim" style={{ marginTop: '14px' }}>
           <button className="side-btn-premium">
             <span className="motif"></span>
             <div className="btn-inner">
@@ -130,35 +129,13 @@ const MainGrid = () => {
           </button>
         </div>
 
-        <div className="sidebar-banners-cinematic reveal-anim" style={{ marginTop: '30px' }}>
-           <a href="#" className="banner-float"><img src="/frame-213-019cc21389857219a2e45138e42b949e-019d3c5fcae57ba388b3602bf1f9f98a.jpg" alt="Banner" /></a>
-           <a href="#" className="banner-float"><img src="/banner-csdlphapluat-019d4d0e19a378689601151864b0c6a3.jpg" alt="Banner" /></a>
-           <a href="#" className="banner-float"><img src="/banner-trungtamcongnghe-btp-v2-019d4d46f7947bddaddfe59c625c4f28.jpg" alt="Banner" /></a>
+        <div className="sidebar-banners-cinematic reveal-anim" style={{ marginTop: '14px' }}>
+          <a href="#" className="banner-float"><img src="/frame-213-019cc21389857219a2e45138e42b949e-019d3c5fcae57ba388b3602bf1f9f98a.jpg" alt="Banner" /></a>
+          <a href="#" className="banner-float"><img src="/banner-csdlphapluat-019d4d0e19a378689601151864b0c6a3.jpg" alt="Banner" /></a>
+          <a href="#" className="banner-float"><img src="/banner-trungtamcongnghe-btp-v2-019d4d46f7947bddaddfe59c625c4f28.jpg" alt="Banner" /></a>
         </div>
 
-        {/* Liên kết Website */}
-        <div className="sidebar-widget stats-widget reveal-anim" style={{ marginTop: '30px' }}>
-          <div className="stats-widget-header">LIÊN KẾT WEBSITE</div>
-          <div className="stats-widget-body">
-            <select className="link-dropdown">
-              <option value="">--Liên kết website--</option>
-              <option value="https://moj.gov.vn">Cổng TTĐT Bộ Tư pháp</option>
-              <option value="https://vbpl.vn">Cơ sở dữ liệu Pháp luật</option>
-              <option value="https://stp.gov.vn">Sở Tư pháp các tỉnh</option>
-            </select>
-          </div>
-        </div>
 
-        {/* Thống kê truy cập */}
-        <div className="sidebar-widget stats-widget reveal-anim" style={{ marginTop: '15px' }}>
-          <div className="stats-widget-header">THỐNG KÊ TRUY CẬP</div>
-          <div className="stats-widget-body">
-            <div className="stat-row">
-              <span className="stat-icon">📊</span>
-              <span>Lượt truy cập: <strong className="stat-count">504256</strong></span>
-            </div>
-          </div>
-        </div>
 
       </aside>
     </main>

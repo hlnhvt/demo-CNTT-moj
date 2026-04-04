@@ -8,7 +8,10 @@ const HeroCarousel = () => {
   const scrollToContent = () => {
     const target = document.getElementById('featured-news-section');
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 70;
+      const extraPadding = 20;
+      const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight - extraPadding;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
@@ -19,7 +22,6 @@ const HeroCarousel = () => {
       <div className="container hero-content-grid-single">
         <div className="hero-intro reveal-anim">
           <h1 className="hero-main-title">
-            CỔNG THÔNG TIN ĐIỆN TỬ<br/>
             CỤC CÔNG NGHỆ THÔNG TIN
           </h1>
           <h2 className="hero-sub-title">Bộ Tư pháp</h2>
@@ -31,16 +33,20 @@ const HeroCarousel = () => {
           </p>
 
           <div className="hero-cta-group">
-            <a href="/gioi-thieu" className="hero-btn-primary">
-              Tìm hiểu về Cục CNTT
+            <a href="/gioi-thieu" className="hero-btn-ghost">
+              <span className="btn-ghost-icon">🏛️</span>
+              Về chúng tôi
             </a>
-            <button className="hero-btn-scroll" onClick={scrollToContent} aria-label="Cuộn xuống nội dung">
-              <span className="scroll-arrow">↓</span>
-              <span>Xem nội dung</span>
-            </button>
           </div>
         </div>
       </div>
+
+      {/* Floating scroll-down arrow at bottom of hero */}
+      <button className="hero-scroll-fab" onClick={scrollToContent} aria-label="Cuộn xuống nội dung">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
     </section>
   );
 };

@@ -14,7 +14,7 @@ const FeaturedNewsBlock = () => {
       </div>
 
       <div className="featured-news-grid">
-        {/* Column 1: Small list items (Left) */}
+        {/* Column 1: Small list items (Left) — 5 items */}
         <div className="fn-col-left">
           <div className="fn-small-card">
             <div className="fn-small-img"><img src={newsImg} alt="News thumbnail" /></div>
@@ -26,15 +26,29 @@ const FeaturedNewsBlock = () => {
           <div className="fn-small-card">
             <div className="fn-small-img"><img src={newsImg} alt="News thumbnail" /></div>
             <div className="fn-small-text">
-              <h4>Bộ Tư pháp đề nghị mang tới các giải pháp tháo gỡ khó khăn cho tự nhiên...</h4>
-              <span className="fn-date">🕒 12/03/2026</span>
+              <h4>Hệ thống CMS Bộ Tư pháp ra mắt phiên bản mới hỗ trợ quản lý đa nền tảng...</h4>
+              <span className="fn-date">🕒 11/03/2026</span>
             </div>
           </div>
           <div className="fn-small-card">
             <div className="fn-small-img"><img src={newsImg} alt="News thumbnail" /></div>
             <div className="fn-small-text">
-              <h4>Bộ Tư pháp đề nghị mang tới các giải pháp tháo gỡ khó khăn về mặt pháp lý...</h4>
-              <span className="fn-date">🕒 12/03/2026</span>
+              <h4>Triển khai Đề án 06 về phát triển ứng dụng dữ liệu dân cư năm 2026...</h4>
+              <span className="fn-date">🕒 10/03/2026</span>
+            </div>
+          </div>
+          <div className="fn-small-card">
+            <div className="fn-small-img"><img src="/news_digital_meeting.png" alt="News thumbnail" /></div>
+            <div className="fn-small-text">
+              <h4>Cục CNTT tổ chức tập huấn hệ thống quản trị nội dung CMS cho các đơn vị trực thuộc...</h4>
+              <span className="fn-date">🕒 08/03/2026</span>
+            </div>
+          </div>
+          <div className="fn-small-card">
+            <div className="fn-small-img"><img src="/news_cybersecurity.png" alt="News thumbnail" /></div>
+            <div className="fn-small-text">
+              <h4>Tăng cường bảo mật hệ thống thông tin phục vụ công tác chuyển đổi số ngành Tư pháp...</h4>
+              <span className="fn-date">🕒 06/03/2026</span>
             </div>
           </div>
         </div>
