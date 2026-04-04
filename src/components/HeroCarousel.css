@@ -1,4 +1,5 @@
-.hero-full-width.centered-hero {
+/* ===== HERO CAROUSEL WRAPPER ===== */
+.hero-carousel-wrap {
   position: relative;
   width: 100vw;
   left: 50%;
@@ -6,65 +7,97 @@
   margin-left: -50vw;
   margin-right: -50vw;
   min-height: calc(100vh - var(--header-height) - var(--nav-height));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0;
-  padding-bottom: 0;
   overflow: hidden;
-  background-color: #2a1500;
+  background-color: #0d1525;
 }
 
-
-.hero-bg-layer-tech {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* ===== SLIDE TRACK — horizontal strip ===== */
+.hero-track {
+  display: flex;
   width: 100%;
   height: 100%;
-  background-image:
-    /* Warm amber-gold + bright navy — much less opacity for brightness */
-    linear-gradient(135deg, rgba(200, 110, 20, 0.55) 0%, rgba(25, 55, 140, 0.55) 55%, rgba(140, 60, 20, 0.45) 100%),
-    url('/bright_tech_pattern_bg.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height));
+  /* Pure CSS smooth horizontal slide — NO fade, NO scale */
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-content-grid-single {
+/* ===== EACH SLIDE ITEM ===== */
+.hero-slide-item {
   position: relative;
-  z-index: 2;
+  flex: 0 0 100%;          /* exactly one viewport width */
+  width: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--nav-height));
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  overflow: hidden;
 }
 
-/* Centered Left Column Styling */
-.hero-intro {
-  color: #fff;
+/* ===== BACKGROUNDS ===== */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Brand slide: warm gradient overlay */
+.hero-slide-bg.brand-bg {
+  background-image:
+    linear-gradient(135deg, rgba(200, 110, 20, 0.55) 0%, rgba(25, 55, 140, 0.55) 55%, rgba(140, 60, 20, 0.45) 100%),
+    url('/bright_tech_pattern_bg.png') !important;
+}
+
+/* News slides: LIGHTER overlay — left side readable, right mostly clear */
+.hero-slide-bg.news-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 45, 0.72) 0%,
+    rgba(5, 15, 45, 0.45) 45%,
+    rgba(5, 15, 45, 0.08) 100%
+  );
+}
+
+/* ===== CONTENT LAYER ===== */
+.hero-slide-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* --- Brand Slide --- */
+.hero-brand-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  color: #fff;
+  max-width: 820px;
+  margin: 0 auto;
 }
 
 .hero-main-title {
   font-family: 'Roboto', sans-serif;
   font-size: 3.6rem;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 12px;
   text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 0 40px rgba(255,180,60,0.2);
   letter-spacing: 3px;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .hero-sub-title {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #ffc85e; /* Warmer gold */
+  color: #ffc85e;
   margin-bottom: 25px;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   letter-spacing: 2px;
@@ -75,28 +108,85 @@
   width: 100px;
   height: 4px;
   background: linear-gradient(to right, transparent, #ffc85e, transparent);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .hero-description {
   font-family: 'Inter', sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #f0e8d8; /* Slightly warm white */
-  max-width: 750px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #f0e8d8;
+  max-width: 700px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 36px;
 }
 
-/* CTA Group */
+/* --- News Slide --- */
+.hero-news-content {
+  max-width: 640px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-news-category {
+  display: inline-block;
+  background: rgba(255, 200, 60, 0.95);
+  color: #1a1a1a;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.hero-news-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 1.3;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+  margin: 0;
+}
+
+.hero-news-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+  margin: 0;
+  max-width: 560px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hero-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-news-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ===== CTA BUTTONS ===== */
 .hero-cta-group {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  align-items: center;
-  margin-top: 40px;
 }
 
-/* Ghost (transparent) button for "Về chúng tôi" */
 .hero-btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -112,28 +202,123 @@
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  cursor: pointer;
 }
 
 .hero-btn-ghost:hover {
-  background: rgba(255, 200, 94, 0.15);
+  background: rgba(255, 200, 94, 0.18);
   border-color: #ffc85e;
   color: #ffc85e;
   transform: translateY(-2px);
 }
 
-.btn-ghost-icon {
-  font-size: 1.1rem;
+.hero-news-btn {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  border-color: rgba(255,255,255,0.6);
 }
 
-/* Floating Scroll FAB */
+.hero-news-btn:hover {
+  border-color: #ffc85e;
+  color: #ffc85e;
+}
+
+.btn-ghost-icon { font-size: 1.1rem; }
+
+/* ===== PREV / NEXT ARROWS ===== */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.45);
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 200, 94, 0.25);
+  border-color: #ffc85e;
+  color: #ffc85e;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.hero-arrow-prev { left: 28px; }
+.hero-arrow-next { right: 28px; }
+
+/* ===== DOT INDICATORS ===== */
+.hero-dots {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.hero-dot.active {
+  background: #ffc85e;
+  border-color: #ffc85e;
+  transform: scale(1.3);
+}
+
+.hero-dot:hover:not(.active) {
+  background: rgba(255,255,255,0.4);
+}
+
+/* ===== PROGRESS BAR ===== */
+.hero-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.15);
+  z-index: 10;
+}
+
+.hero-progress-fill {
+  height: 100%;
+  background: #ffc85e;
+  width: 0%;
+  animation: progressFill linear forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* ===== SCROLL DOWN FAB ===== */
 .hero-scroll-fab {
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -144,7 +329,7 @@
   cursor: pointer;
   backdrop-filter: blur(8px);
   transition: all 0.3s ease;
-  animation: fab-bounce 2s ease infinite;
+  animation: fab-bounce 2.2s ease infinite;
 }
 
 .hero-scroll-fab:hover {
@@ -155,5 +340,5 @@
 
 @keyframes fab-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  50%       { transform: translateX(-50%) translateY(8px); }
 }
