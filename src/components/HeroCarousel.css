@@ -209,7 +209,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   padding: 6px 14px;
   border-radius: 4px;
   text-transform: uppercase;
@@ -523,12 +523,13 @@
     position: relative;
     top: auto;
     bottom: 0;
-    padding: 20px 15px !important;
+    padding: 10px 15px !important; /* Reduced top padding slightly */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
     pointer-events: auto; /* Đảm bảo nút click được */
+    transform: translateY(-25px); /* Shift entire content block up into the image area more */
   }
 
   /* Đường phân cách thành nằm ngang */
@@ -543,6 +544,11 @@
 
   .hero-news-content {
     gap: 8px !important; /* Tighten general gap */
+  }
+
+  .hero-news-category {
+    margin-bottom: 10px !important; /* Increase gap to title below */
+    margin-top: -10px !important; /* Move up away from the block center */
   }
 
   .hero-news-title {
