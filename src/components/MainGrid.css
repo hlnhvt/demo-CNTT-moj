@@ -443,15 +443,20 @@
   .main-editorial {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 0 15px; /* Added padding for mobile */
   }
 
   .sidebar-col {
-    order: 2; /* Sidebar goes below content */
+    grid-column: 1;
+    grid-row: 1; /* Stay on first row */
+    order: 1;
   }
 
   .news-content-col {
-    order: 1;
-    gap: 30px;
+    grid-column: 1; /* Move to first column too */
+    grid-row: 2; /* Move to second row */
+    order: 2;
+    gap: 20px;
   }
 
   .editorial-layout {
@@ -467,7 +472,7 @@
   }
 
   .news-editorial-section {
-    padding: 20px;
+    padding: 15px; /* Slightly reduced for more content space */
   }
 }
 

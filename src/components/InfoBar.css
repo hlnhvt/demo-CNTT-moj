@@ -110,3 +110,39 @@
   color: #555;
   font-weight: 600;
 }
+
+/* ===== MOBILE RESPONSIVE (MAX-WIDTH: 768px) ===== */
+@media (max-width: 768px) {
+  .info-bar-inner {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  .info-bar-block {
+    padding: 20px 0;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info-bar-block:last-child {
+    border-bottom: none;
+  }
+
+  .info-bar-divider {
+    display: none;
+  }
+
+  .info-bar-dropdown {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .info-bar-stats {
+    flex-direction: column; /* Force vertical stack as requested */
+    gap: 15px;
+    align-items: center;
+  }
+}
