@@ -102,28 +102,24 @@ const MainGrid = () => {
           <button className="side-btn-premium">
             <span className="motif"></span>
             <div className="btn-inner">
-              <span className="btn-icon">📜</span>
               Văn bản pháp luật mới về CNTT
             </div>
           </button>
           <button className="side-btn-premium">
             <span className="motif"></span>
             <div className="btn-inner">
-              <span className="btn-icon">💡</span>
               Thông tin công nghệ
             </div>
           </button>
           <button className="side-btn-premium">
             <span className="motif"></span>
             <div className="btn-inner">
-              <span className="btn-icon">📦</span>
               Tài liệu hướng dẫn sử dụng
             </div>
           </button>
           <button className="side-btn-premium">
             <span className="motif"></span>
             <div className="btn-inner">
-              <span className="btn-icon">📞</span>
               Danh bạ điện thoại
             </div>
           </button>
