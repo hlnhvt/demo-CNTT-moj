@@ -541,23 +541,31 @@
     transform: translateY(-50%);
   }
 
+  .hero-news-content {
+    gap: 8px !important; /* Tighten general gap */
+  }
+
   .hero-news-title {
-    font-size: 1.35rem !important; /* Slightly smaller for better line wrap */
-    line-height: 1.25;
-    margin-bottom: 8px;
+    font-size: 1.25rem !important;
+    line-height: 1.2;
+    margin-bottom: 2px !important; /* Tighten gap to desc */
     font-weight: 800;
   }
 
   .hero-news-desc {
     font-size: 0.88rem !important;
-    -webkit-line-clamp: 2; /* Even more compact on mobile */
-    margin-bottom: 12px;
-    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    margin-bottom: 4px !important; /* Tighten gap to meta/btn */
+    line-height: 1.45;
   }
 
   .hero-news-meta {
-    gap: 12px;
+    gap: 10px !important; /* Tighten date/button gap */
+    margin-top: 2px;
   }
+
+  /* Keep brand slide un-affected or untouched as per user request */
+  /* (The brand slide styles 471-494 will remain above this) */
 
   /* Arrows Mobile */
   .hero-arrow {
