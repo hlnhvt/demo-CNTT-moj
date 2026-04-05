@@ -253,3 +253,64 @@
   font-size: 0.8rem;
   color: #888;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .media-block {
+    padding: 0 15px 30px;
+  }
+
+  .media-block-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .media-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+  }
+
+  .media-tab {
+    flex: 1;
+    padding: 8px 15px;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+
+  .media-white-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .media-card-img-wrap {
+    width: 110px;
+  }
+
+  .media-card-body {
+    padding: 12px;
+  }
+
+  .media-card-title {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .media-block-title {
+    font-size: 1.2rem;
+  }
+  
+  .media-card-sapo {
+    display: none; /* Hide sapo on small phones to save space */
+  }
+
+  .media-card-meta {
+    gap: 10px;
+    font-size: 0.75rem;
+  }
+}
+

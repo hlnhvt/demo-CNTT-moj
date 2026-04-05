@@ -77,3 +77,38 @@
   background: rgba(255, 255, 255, 0.3);
   margin-top: 20px;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .main-footer {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .footer-top-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .footer-contact {
+    width: 100%;
+  }
+
+  .footer-seal-container {
+    justify-content: center;
+  }
+
+  .footer-seal {
+    width: 160px;
+  }
+}
+

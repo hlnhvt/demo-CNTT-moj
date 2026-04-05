@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const menuItems = [
     { name: 'CỔNG THÔNG TIN ĐIỆN TỬ', link: '#' },
     { name: 'TRANG CHỦ', link: '#', active: true },
@@ -10,18 +12,29 @@ const Navbar = () => {
     { name: 'TÀI LIỆU NỘI BỘ', link: '#' }
   ];
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <nav className="main-nav glass">
+    <nav className={`main-nav glass ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-container">
-        <ul className="nav-menu">
+        <button className="hamburger-btn" onClick={toggleMenu} aria-label="Menu">
+          <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
+        <ul className={`nav-menu ${isMenuOpen ? 'show' : ''}`}>
           {menuItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => setIsMenuOpen(false)}>
               <a href={item.link} className={item.active ? 'active' : ''}>
                 {item.name}
               </a>
             </li>
           ))}
         </ul>
+
         <div className="nav-actions">
           <button className="icon-btn search-btn" title="Tìm kiếm">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
